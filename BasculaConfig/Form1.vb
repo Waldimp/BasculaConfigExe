@@ -74,6 +74,16 @@
         End If
     End Sub
 
+    Private Sub btnAutomatizacion_Click(sender As Object, e As EventArgs) Handles btnAutomatizacion.Click
+        If Module1.Activo = True Then
+            MessageBox.Show("POR FAVOR, DESCONECTA LA CONEXIÓN HECHA DESDE CONFIGURACIÓN")
+        Else
+            SidePanel.Height = btnAutomatizacion.Height
+            SidePanel.Top = btnAutomatizacion.Top
+            AutomatizacionControl1.BringToFront()
+        End If
+    End Sub
+
     Private Sub FirstCustomControl1_Load(sender As Object, e As EventArgs) Handles FirstCustomControl1.Load
 
     End Sub

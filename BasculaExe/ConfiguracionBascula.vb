@@ -64,11 +64,13 @@ Public Class ConfiguracionBascula
         End Get
     End Property
 
-    ''' <summary>Carpeta final donde se escribe pesas.txt.</summary>
+    ''' <summary>
+    ''' Carpeta donde se escribe el peso: es exactamente la que se eligió en el
+    ''' configurador, sin ninguna subcarpeta. Si no existe, se crea al guardar.
+    ''' </summary>
     Public ReadOnly Property CarpetaDestino As String
         Get
-            If String.IsNullOrEmpty(CarpetaSalida) Then Return ""
-            Return Path.Combine(CarpetaSalida, "BasculaNET")
+            Return CarpetaSalida
         End Get
     End Property
 
@@ -169,11 +171,12 @@ Public Class ConfiguracionBascula
     End Sub
 
     Private Sub LeerOpcionesDeArranque()
-        ' Estas dos opciones son nuevas. Una instalación configurada con la versión
-        ' anterior no las tiene, así que se asumen valores seguros: no arrancar sola
-        ' y leer cada cinco segundos.
+        ' Estas dos opciones son nuevas, así que una instalación hecha con la versión
+        ' anterior no las tiene. De fábrica el lector empieza a leer apenas se abre y
+        ' toma una lectura cada cinco segundos; solo queda esperando al operativo si
+        ' se eligió el modo manual expresamente en el configurador.
         Dim arranque As String = LeerTexto("Arranque.txt")
-        ArranqueAutomatico = String.Equals(arranque, "Automatico", StringComparison.OrdinalIgnoreCase)
+        ArranqueAutomatico = Not String.Equals(arranque, "Manual", StringComparison.OrdinalIgnoreCase)
 
         Dim intervalo As Integer = LeerEntero("Intervalo.txt", IntervaloPorDefecto)
         If intervalo < IntervaloMinimo OrElse intervalo > IntervaloMaximo Then

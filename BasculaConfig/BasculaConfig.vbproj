@@ -105,6 +105,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutomatizacionControl.Designer.vb">
+      <DependentUpon>AutomatizacionControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AutomatizacionControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InicioLector.vb" />
     <Compile Include="ConfigurationPort.Designer.vb">
       <DependentUpon>ConfigurationPort.vb</DependentUpon>
     </Compile>

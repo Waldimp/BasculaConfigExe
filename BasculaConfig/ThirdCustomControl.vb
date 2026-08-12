@@ -119,7 +119,13 @@ Public Class ThirdCustomControl
 
             End If
         Catch ex As Exception
-            MessageBox.Show("Error al encender el puerto: " + ex.ToString())
+            ' La conexión no prosperó: se deja el botón como estaba para que el usuario
+            ' pueda reintentar, en lugar de quedar diciendo "Desconectar" sin estarlo.
+            btnConectar.Text = "Conectar"
+            Module1.Activo = False
+            tmrTimer.Enabled = False
+            MessageBox.Show(Module1.MensajeDePuerto(ex, cboPuertos.Text), "No se pudo conectar",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
 

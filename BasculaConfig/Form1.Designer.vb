@@ -43,6 +43,8 @@ Partial Class Form1
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnConfigPuerto = New System.Windows.Forms.Button()
+        Me.btnAutomatizacion = New System.Windows.Forms.Button()
+        Me.AutomatizacionControl1 = New BasculaConfig.AutomatizacionControl()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnConfigBajoDemanda = New System.Windows.Forms.Button()
         Me.btnConfig = New System.Windows.Forms.Button()
@@ -61,6 +63,7 @@ Partial Class Form1
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Panel4.Controls.Add(Me.btnAutomatizacion)
         Me.Panel4.Controls.Add(Me.btnConfigPuerto)
         Me.Panel4.Controls.Add(Me.PictureBox2)
         Me.Panel4.Controls.Add(Me.btnConfigBajoDemanda)
@@ -209,6 +212,20 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
         '
+        'btnAutomatizacion
+        '
+        Me.btnAutomatizacion.FlatAppearance.BorderSize = 0
+        Me.btnAutomatizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAutomatizacion.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAutomatizacion.ForeColor = System.Drawing.Color.White
+        Me.btnAutomatizacion.Location = New System.Drawing.Point(11, 347)
+        Me.btnAutomatizacion.Name = "btnAutomatizacion"
+        Me.btnAutomatizacion.Size = New System.Drawing.Size(197, 54)
+        Me.btnAutomatizacion.TabIndex = 38
+        Me.btnAutomatizacion.Text = "       Automatización"
+        Me.btnAutomatizacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAutomatizacion.UseVisualStyleBackColor = True
+        '
         'btnConfigPuerto
         '
         Me.btnConfigPuerto.FlatAppearance.BorderSize = 0
@@ -316,6 +333,15 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1026, 571)
+        '
+        'AutomatizacionControl1
+        '
+        Me.AutomatizacionControl1.BackColor = System.Drawing.Color.White
+        Me.AutomatizacionControl1.Location = New System.Drawing.Point(208, 148)
+        Me.AutomatizacionControl1.Name = "AutomatizacionControl1"
+        Me.AutomatizacionControl1.Size = New System.Drawing.Size(817, 423)
+        Me.AutomatizacionControl1.TabIndex = 39
+        Me.Controls.Add(Me.AutomatizacionControl1)
         Me.Controls.Add(Me.ConfigurationPort1)
         Me.Controls.Add(Me.ThirdCustomControl1)
         Me.Controls.Add(Me.SecondCustomControl1)
@@ -370,4 +396,6 @@ Partial Class Form1
     Private WithEvents btnConfigPuerto As Button
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents ConfigurationPort1 As ConfigurationPort
+    Friend WithEvents btnAutomatizacion As Button
+    Friend WithEvents AutomatizacionControl1 As AutomatizacionControl
 End Class
