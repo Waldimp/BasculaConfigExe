@@ -25,7 +25,12 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btnAutomatizacion = New System.Windows.Forms.Button()
+        Me.btnConfigPuerto = New System.Windows.Forms.Button()
+        Me.btnConfigBajoDemanda = New System.Windows.Forms.Button()
         Me.SidePanel = New System.Windows.Forms.Panel()
+        Me.btnConfig = New System.Windows.Forms.Button()
+        Me.btnInicio = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnMini = New System.Windows.Forms.Button()
         Me.lblHora = New System.Windows.Forms.Label()
@@ -34,6 +39,7 @@ Partial Class Form1
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.tmrTimer = New System.Windows.Forms.Timer(Me.components)
         Me.spPuertos = New System.IO.Ports.SerialPort(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -41,23 +47,15 @@ Partial Class Form1
         Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnConfigPuerto = New System.Windows.Forms.Button()
-        Me.btnAutomatizacion = New System.Windows.Forms.Button()
         Me.AutomatizacionControl1 = New BasculaConfig.AutomatizacionControl()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btnConfigBajoDemanda = New System.Windows.Forms.Button()
-        Me.btnConfig = New System.Windows.Forms.Button()
-        Me.btnInicio = New System.Windows.Forms.Button()
         Me.ConfigurationPort1 = New BasculaConfig.ConfigurationPort()
         Me.ThirdCustomControl1 = New BasculaConfig.ThirdCustomControl()
         Me.SecondCustomControl1 = New BasculaConfig.SecondCustomControl()
         Me.FirstCustomControl1 = New BasculaConfig.FirstCustomControl()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel4
@@ -65,7 +63,6 @@ Partial Class Form1
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Panel4.Controls.Add(Me.btnAutomatizacion)
         Me.Panel4.Controls.Add(Me.btnConfigPuerto)
-        Me.Panel4.Controls.Add(Me.PictureBox2)
         Me.Panel4.Controls.Add(Me.btnConfigBajoDemanda)
         Me.Panel4.Controls.Add(Me.SidePanel)
         Me.Panel4.Controls.Add(Me.btnConfig)
@@ -76,6 +73,54 @@ Partial Class Form1
         Me.Panel4.Size = New System.Drawing.Size(208, 571)
         Me.Panel4.TabIndex = 4
         '
+        'btnAutomatizacion
+        '
+        Me.btnAutomatizacion.FlatAppearance.BorderSize = 0
+        Me.btnAutomatizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAutomatizacion.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAutomatizacion.ForeColor = System.Drawing.Color.White
+        Me.btnAutomatizacion.Image = CType(resources.GetObject("btnAutomatizacion.Image"), System.Drawing.Image)
+        Me.btnAutomatizacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAutomatizacion.Location = New System.Drawing.Point(11, 347)
+        Me.btnAutomatizacion.Name = "btnAutomatizacion"
+        Me.btnAutomatizacion.Size = New System.Drawing.Size(197, 54)
+        Me.btnAutomatizacion.TabIndex = 38
+        Me.btnAutomatizacion.Text = "       Automatización"
+        Me.btnAutomatizacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAutomatizacion.UseVisualStyleBackColor = True
+        '
+        'btnConfigPuerto
+        '
+        Me.btnConfigPuerto.FlatAppearance.BorderSize = 0
+        Me.btnConfigPuerto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfigPuerto.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfigPuerto.ForeColor = System.Drawing.Color.White
+        Me.btnConfigPuerto.Image = CType(resources.GetObject("btnConfigPuerto.Image"), System.Drawing.Image)
+        Me.btnConfigPuerto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnConfigPuerto.Location = New System.Drawing.Point(11, 287)
+        Me.btnConfigPuerto.Name = "btnConfigPuerto"
+        Me.btnConfigPuerto.Size = New System.Drawing.Size(197, 54)
+        Me.btnConfigPuerto.TabIndex = 37
+        Me.btnConfigPuerto.Text = "       Configuración         Puerto"
+        Me.btnConfigPuerto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnConfigPuerto.UseVisualStyleBackColor = True
+        '
+        'btnConfigBajoDemanda
+        '
+        Me.btnConfigBajoDemanda.FlatAppearance.BorderSize = 0
+        Me.btnConfigBajoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfigBajoDemanda.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfigBajoDemanda.ForeColor = System.Drawing.Color.White
+        Me.btnConfigBajoDemanda.Image = CType(resources.GetObject("btnConfigBajoDemanda.Image"), System.Drawing.Image)
+        Me.btnConfigBajoDemanda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnConfigBajoDemanda.Location = New System.Drawing.Point(11, 227)
+        Me.btnConfigBajoDemanda.Name = "btnConfigBajoDemanda"
+        Me.btnConfigBajoDemanda.Size = New System.Drawing.Size(197, 54)
+        Me.btnConfigBajoDemanda.TabIndex = 9
+        Me.btnConfigBajoDemanda.Text = "       Configuración         Bajo Demanda"
+        Me.btnConfigBajoDemanda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnConfigBajoDemanda.UseVisualStyleBackColor = True
+        '
         'SidePanel
         '
         Me.SidePanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(178, Byte), Integer), CType(CType(8, Byte), Integer), CType(CType(55, Byte), Integer))
@@ -83,6 +128,38 @@ Partial Class Form1
         Me.SidePanel.Name = "SidePanel"
         Me.SidePanel.Size = New System.Drawing.Size(10, 54)
         Me.SidePanel.TabIndex = 5
+        '
+        'btnConfig
+        '
+        Me.btnConfig.FlatAppearance.BorderSize = 0
+        Me.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfig.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfig.ForeColor = System.Drawing.Color.White
+        Me.btnConfig.Image = CType(resources.GetObject("btnConfig.Image"), System.Drawing.Image)
+        Me.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnConfig.Location = New System.Drawing.Point(11, 167)
+        Me.btnConfig.Name = "btnConfig"
+        Me.btnConfig.Size = New System.Drawing.Size(197, 54)
+        Me.btnConfig.TabIndex = 6
+        Me.btnConfig.Text = "       Configuración    Continuo"
+        Me.btnConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnConfig.UseVisualStyleBackColor = True
+        '
+        'btnInicio
+        '
+        Me.btnInicio.FlatAppearance.BorderSize = 0
+        Me.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInicio.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInicio.ForeColor = System.Drawing.Color.White
+        Me.btnInicio.Image = CType(resources.GetObject("btnInicio.Image"), System.Drawing.Image)
+        Me.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnInicio.Location = New System.Drawing.Point(11, 107)
+        Me.btnInicio.Name = "btnInicio"
+        Me.btnInicio.Size = New System.Drawing.Size(197, 54)
+        Me.btnInicio.TabIndex = 8
+        Me.btnInicio.Text = "       Inicio"
+        Me.btnInicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnInicio.UseVisualStyleBackColor = True
         '
         'Panel2
         '
@@ -174,6 +251,16 @@ Partial Class Form1
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Balanzas"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.BasculaConfig.My.Resources.Resources.basculas1
+        Me.PictureBox1.Location = New System.Drawing.Point(6, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(96, 84)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
         'tmrTimer
         '
         Me.tmrTimer.Interval = 500
@@ -202,105 +289,13 @@ Partial Class Form1
         Me.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'AutomatizacionControl1
         '
-        Me.PictureBox1.Image = Global.BasculaConfig.My.Resources.Resources.basculas1
-        Me.PictureBox1.Location = New System.Drawing.Point(6, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(96, 84)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
-        '
-        'btnAutomatizacion
-        '
-        Me.btnAutomatizacion.FlatAppearance.BorderSize = 0
-        Me.btnAutomatizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAutomatizacion.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAutomatizacion.ForeColor = System.Drawing.Color.White
-        Me.btnAutomatizacion.Image = CType(resources.GetObject("btnConfig.Image"), System.Drawing.Image)
-        Me.btnAutomatizacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAutomatizacion.Location = New System.Drawing.Point(11, 347)
-        Me.btnAutomatizacion.Name = "btnAutomatizacion"
-        Me.btnAutomatizacion.Size = New System.Drawing.Size(197, 54)
-        Me.btnAutomatizacion.TabIndex = 38
-        Me.btnAutomatizacion.Text = "       Automatización"
-        Me.btnAutomatizacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAutomatizacion.UseVisualStyleBackColor = True
-        '
-        'btnConfigPuerto
-        '
-        Me.btnConfigPuerto.FlatAppearance.BorderSize = 0
-        Me.btnConfigPuerto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfigPuerto.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfigPuerto.ForeColor = System.Drawing.Color.White
-        Me.btnConfigPuerto.Image = CType(resources.GetObject("btnConfigPuerto.Image"), System.Drawing.Image)
-        Me.btnConfigPuerto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnConfigPuerto.Location = New System.Drawing.Point(11, 287)
-        Me.btnConfigPuerto.Name = "btnConfigPuerto"
-        Me.btnConfigPuerto.Size = New System.Drawing.Size(197, 54)
-        Me.btnConfigPuerto.TabIndex = 37
-        Me.btnConfigPuerto.Text = "       Configuración         Puerto"
-        Me.btnConfigPuerto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnConfigPuerto.UseVisualStyleBackColor = True
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.BasculaConfig.My.Resources.Resources.xdsepesa1
-        Me.PictureBox2.Location = New System.Drawing.Point(35, 12)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(115, 84)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 10
-        Me.PictureBox2.TabStop = False
-        '
-        'btnConfigBajoDemanda
-        '
-        Me.btnConfigBajoDemanda.FlatAppearance.BorderSize = 0
-        Me.btnConfigBajoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfigBajoDemanda.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfigBajoDemanda.ForeColor = System.Drawing.Color.White
-        Me.btnConfigBajoDemanda.Image = CType(resources.GetObject("btnConfigBajoDemanda.Image"), System.Drawing.Image)
-        Me.btnConfigBajoDemanda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnConfigBajoDemanda.Location = New System.Drawing.Point(11, 227)
-        Me.btnConfigBajoDemanda.Name = "btnConfigBajoDemanda"
-        Me.btnConfigBajoDemanda.Size = New System.Drawing.Size(197, 54)
-        Me.btnConfigBajoDemanda.TabIndex = 9
-        Me.btnConfigBajoDemanda.Text = "       Configuración         Bajo Demanda"
-        Me.btnConfigBajoDemanda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnConfigBajoDemanda.UseVisualStyleBackColor = True
-        '
-        'btnConfig
-        '
-        Me.btnConfig.FlatAppearance.BorderSize = 0
-        Me.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfig.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfig.ForeColor = System.Drawing.Color.White
-        Me.btnConfig.Image = CType(resources.GetObject("btnConfig.Image"), System.Drawing.Image)
-        Me.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnConfig.Location = New System.Drawing.Point(11, 167)
-        Me.btnConfig.Name = "btnConfig"
-        Me.btnConfig.Size = New System.Drawing.Size(197, 54)
-        Me.btnConfig.TabIndex = 6
-        Me.btnConfig.Text = "       Configuración    Continuo"
-        Me.btnConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnConfig.UseVisualStyleBackColor = True
-        '
-        'btnInicio
-        '
-        Me.btnInicio.FlatAppearance.BorderSize = 0
-        Me.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInicio.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInicio.ForeColor = System.Drawing.Color.White
-        Me.btnInicio.Image = CType(resources.GetObject("btnInicio.Image"), System.Drawing.Image)
-        Me.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInicio.Location = New System.Drawing.Point(11, 107)
-        Me.btnInicio.Name = "btnInicio"
-        Me.btnInicio.Size = New System.Drawing.Size(197, 54)
-        Me.btnInicio.TabIndex = 8
-        Me.btnInicio.Text = "       Inicio"
-        Me.btnInicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnInicio.UseVisualStyleBackColor = True
+        Me.AutomatizacionControl1.BackColor = System.Drawing.Color.White
+        Me.AutomatizacionControl1.Location = New System.Drawing.Point(208, 148)
+        Me.AutomatizacionControl1.Name = "AutomatizacionControl1"
+        Me.AutomatizacionControl1.Size = New System.Drawing.Size(817, 423)
+        Me.AutomatizacionControl1.TabIndex = 39
         '
         'ConfigurationPort1
         '
@@ -335,14 +330,6 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1026, 571)
-        '
-        'AutomatizacionControl1
-        '
-        Me.AutomatizacionControl1.BackColor = System.Drawing.Color.White
-        Me.AutomatizacionControl1.Location = New System.Drawing.Point(208, 148)
-        Me.AutomatizacionControl1.Name = "AutomatizacionControl1"
-        Me.AutomatizacionControl1.Size = New System.Drawing.Size(817, 423)
-        Me.AutomatizacionControl1.TabIndex = 39
         Me.Controls.Add(Me.AutomatizacionControl1)
         Me.Controls.Add(Me.ConfigurationPort1)
         Me.Controls.Add(Me.ThirdCustomControl1)
@@ -363,16 +350,14 @@ Partial Class Form1
         Me.Panel4.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents PictureBox2 As PictureBox
     Private WithEvents btnConfigBajoDemanda As Button
     Private WithEvents SidePanel As Panel
     Private WithEvents btnConfig As Button
