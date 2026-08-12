@@ -8,6 +8,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>BasculaExe.My.MyApplication</StartupObject>
     <RootNamespace>BasculaExe</RootNamespace>
+    <ApplicationIcon>Resources\basculas.ico</ApplicationIcon>
     <AssemblyName>BasculaExe</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
@@ -101,6 +102,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfiguracionBascula.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +110,9 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="InicioWindows.vb" />
+    <Compile Include="LectorBascula.vb" />
+    <Compile Include="Registro.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -125,6 +130,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\basculas.ico" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
