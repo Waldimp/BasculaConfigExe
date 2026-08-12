@@ -218,12 +218,14 @@ Partial Class Form1
         Me.btnAutomatizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAutomatizacion.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAutomatizacion.ForeColor = System.Drawing.Color.White
+        Me.btnAutomatizacion.Image = CType(resources.GetObject("btnConfig.Image"), System.Drawing.Image)
+        Me.btnAutomatizacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAutomatizacion.Location = New System.Drawing.Point(11, 347)
         Me.btnAutomatizacion.Name = "btnAutomatizacion"
         Me.btnAutomatizacion.Size = New System.Drawing.Size(197, 54)
         Me.btnAutomatizacion.TabIndex = 38
         Me.btnAutomatizacion.Text = "       Automatización"
-        Me.btnAutomatizacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAutomatizacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAutomatizacion.UseVisualStyleBackColor = True
         '
         'btnConfigPuerto

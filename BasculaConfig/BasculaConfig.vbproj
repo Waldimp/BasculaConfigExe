@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Aplicaciones basculas\instaladoresBascula\BasculaConConfigPuertos\Bascula_Config_3_0\PruebaTImer\</PublishUrl>
+    <PublishUrl>D:\Aplicaciones basculas\instaladoresBascula\Unificado\BasculaConfig\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>

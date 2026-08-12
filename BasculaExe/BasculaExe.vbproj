@@ -16,7 +16,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Aplicaciones basculas\instaladoresBascula\BasculaConConfigPuertos\Bascula_Exe\Bascula_Exe_Pesas\</PublishUrl>
+    <PublishUrl>D:\Aplicaciones basculas\instaladoresBascula\Unificado\BasculaExe\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
