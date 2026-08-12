@@ -1,0 +1,90 @@
+## Visual Studio / .NET Framework
+
+# Resultados de compilación
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Ll]og/
+[Ll]ogs/
+
+# Carpeta de configuración de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Claves de firma (contienen clave privada — NO versionar)
+*.pfx
+*.snk
+
+# Publicación / ClickOnce
+publish/
+[Pp]ublish[Pp]rofiles/
+*.publishsettings
+*.azurePubxml
+*.pubxml
+*.pubxml.user
+*_TemporaryKey.pfx
+
+# NuGet
+packages/
+*.nupkg
+*.nuget.props
+*.nuget.targets
+
+# Archivos temporales y de caché
+*.cache
+*.tmp
+*.tlog
+*.log
+*.pdb
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.ipdb
+*.tli
+*.tlh
+*.res
+*.rsp
+*.pgc
+*.pgd
+*.vspscc
+*.vssscc
+*.dbmdl
+*.jfm
+*.pfi
+*.ncb
+*.sdf
+*.opensdf
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+
+# ReSharper / Rider
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+.idea/
+
+# Resultados de tests
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+.DS_Store
+
+# Comprimidos y respaldos sueltos
+*.rar
+*.zip
+*.7z
+*.bak
+*.old
