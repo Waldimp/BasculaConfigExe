@@ -216,7 +216,7 @@ Partial Class Form1
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(179, 21)
         Me.Label3.TabIndex = 29
-        Me.Label3.Text = "Aplicación Versión 3.0"
+        Me.Label3.Text = "Aplicación Versión 5.1"
         '
         'Panel3
         '
