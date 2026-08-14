@@ -12,8 +12,17 @@ Public Class AutomatizacionControl
     Private Const CarpetaConfiguracion As String = "C:\config"
     Private Const IntervaloPorDefecto As Integer = 5
 
-    ''' <summary>Evita guardar mientras se están repoblando los controles al abrir la pantalla.</summary>
-    Private _cargando As Boolean = False
+    ''' <summary>
+    ''' Evita guardar mientras se están repoblando los controles al abrir la pantalla.
+    '''
+    ''' Nace en True a propósito. Los valores que el diseñador asigna a la casilla, al
+    ''' botón de opción y al intervalo se establecen dentro de InitializeComponent, que
+    ''' corre antes de Load, y ahí los manejadores ya están enganchados. Si la bandera
+    ''' empezara en False, con solo abrir la pantalla se dispararían los eventos y se
+    ''' guardaría configuración que el usuario nunca tocó: llegó a reactivar el arranque
+    ''' con Windows aunque lo hubieran desmarcado antes.
+    ''' </summary>
+    Private _cargando As Boolean = True
 
     Private Sub AutomatizacionControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         _cargando = True
