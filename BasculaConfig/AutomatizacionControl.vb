@@ -66,6 +66,12 @@ Public Class AutomatizacionControl
     ''' haya elegido: si lo desmarcó a propósito, no se vuelve a activar solo.
     ''' </summary>
     Private Sub AplicarValorPorDefectoDeArranque()
+        ' El intervalo se siembra aparte: puede faltar aunque el arranque ya esté
+        ' definido, por ejemplo en una instalación hecha con la versión anterior.
+        If Not File.Exists(Path.Combine(CarpetaConfiguracion, "Intervalo.txt")) Then
+            Guardar("Intervalo.txt", IntervaloPorDefecto.ToString())
+        End If
+
         If File.Exists(Path.Combine(CarpetaConfiguracion, "InicioWindows.txt")) Then Return
 
         Dim mensaje As String = ""

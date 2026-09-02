@@ -72,38 +72,36 @@ Public Class SecondCustomControl
 
     Private Sub btnDeterminar_Click(sender As Object, e As EventArgs) Handles btnDeterminar.Click
 
-
         listaPuertos.Items.Clear()
         cboPuertos.Items.Clear()
 
-
-        For Each PuertoDisponible As String In My.Computer.Ports.SerialPortNames
-
-            listaPuertos.Items.Add(PuertoDisponible)
-
-            cboPuertos.Items.Add(PuertoDisponible)
-
-            spPuertosPrueba.PortName = PuertoDisponible
-
-            Try
-                spPuertosPrueba.Open()
-            Catch ex As Exception
-
-
-                cboPuertos.Items.Remove(PuertoDisponible)
-            End Try
-
-            If spPuertosPrueba.IsOpen = True Then
-                spPuertosPrueba.Close()
-            End If
-
+        ' Se listan todos los puertos que reporta Windows, sin descartar ninguno.
+        '
+        ' Antes se intentaba abrir cada puerto para "comprobar" si servía, y el que
+        ' fallara se quitaba de la lista. Eso descartaba puertos perfectamente
+        ' utilizables por tres motivos: un adaptador USB recién conectado suele
+        ' rechazar la primera apertura mientras el driver se acomoda; si el cierre de
+        ' un puerto anterior fallaba, el objeto quedaba abierto y entonces fallaban
+        ' todos los siguientes en cascada; y abrir y cerrar mueve las líneas DTR y RTS,
+        ' lo que en algunas básculas provoca un reinicio.
+        '
+        ' Windows no ofrece forma de saber si un puerto está libre sin abrirlo, así que
+        ' se muestran todos y, si al conectar el puerto está ocupado, se explica ahí.
+        For Each puerto As String In Module1.PuertosDelSistema()
+            listaPuertos.Items.Add(puerto)
+            cboPuertos.Items.Add(puerto)
         Next
 
-
         If cboPuertos.Items.Count > 0 Then
-            cboPuertos.Text = cboPuertos.Items(0)
 
-            MessageBox.Show("SELECCIONE EL PUERTO A UTILIZAR")
+            ' Si ya había un puerto elegido y sigue presente, se respeta.
+            Dim guardado As String = My.Settings.Continuo_PuertoCOM
+            If Not String.IsNullOrEmpty(guardado) AndAlso cboPuertos.Items.Contains(guardado) Then
+                cboPuertos.Text = guardado
+            Else
+                cboPuertos.Text = cboPuertos.Items(0).ToString()
+            End If
+
             btnConectar.Enabled = True
 
             panelCaracteres.Visible = True
@@ -111,7 +109,9 @@ Public Class SecondCustomControl
 
         Else
             cboPuertos.Text = ""
-            MessageBox.Show("NO SE ENCONTRARON PUERTOS APTOS DISPONIBLES")
+            MessageBox.Show("Windows no reporta ningún puerto serial en esta computadora." & vbCrLf & vbCrLf &
+                            "Revisa que el cable o el adaptador USB estén conectados.",
+                            "Sin puertos", MessageBoxButtons.OK, MessageBoxIcon.Information)
             btnConectar.Enabled = False
 
             panelCaracteres.Visible = False
